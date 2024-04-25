@@ -1,23 +1,27 @@
-## Intro
+# NGINX Example
 
-- Put C9 IDE in Docker for debugging convenient
-- PM2 and NGINX reserve proxy to add more real applications
-- [TODO]: PM2 server managers to turn on/off c9sdk for security
+This example is deploys a site using [NGINX](https://www.nginx.com/)
 
-## Deploy
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/EjubUu?referralCode=kmHOLH)
-
-## Variable
-
-- `PORT`: please enter `8080` (nginx port)
-- `C9SDK_PASSWORD`: password for basic auth. it would be publically accessible if this env is not defined
-
-## What to do after deployment
-
-- add more nginx `.conf` files to `/etc/nginx/sites-enabled` to reserve proxy your application
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/o3MbZe)
 
 
+## ✨ Features
 
+- NGINX
+- Static Site
 
+## 💁‍♀️ How to use
 
+- Open the `site/index.html` in the browser
+
+## 📝 Notes
+
+By default the `site/` directory gets deployed as a static site. This can be modified by changing the `Dockerfile`.
+
+The site is deployed using the default NGINX configuration. This can be overridden with a custom conf file by adding
+
+```
+COPY nginx.conf /etc/nginx/nginx.conf
+```
+
+to the end of the Dockerfile. For more information, [read the docs](https://hub.docker.com/_/nginx).
